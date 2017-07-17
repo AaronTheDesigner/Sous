@@ -1,1 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOUS</title>
 
+  <!--Css files -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/Reset.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css"> 
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-social.css"> 
+
+  <!-- links for bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+ <!-- <! links for  jquery CDN--> 
+ <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
+ 
+ <!-- add moment JS file -->
+ <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 90%;
+      margin: auto;
+  }
+  </style>
+
+</head>
+
+<body style="background-color:#000000;">
+  
+<header>
+
+<!-- navigation bar -->
+ 
+  <div class="container-fluid">
+  <nav class="navbar navbar-default">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Sous</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Sous-Home Page</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">About<span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Conatct us</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Sous<span class="caret"></span></a>
+
+          <!-- NOTE!!! labels to define -->
+          <ul class="dropdown-menu">
+            <li><a href="#">Register</a></li>
+            <li><a href="#">Inspire me!</a></li>
+            <li><a href="#">Seasonal</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Ingredients</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Cuisines</a></li>
+            <li><a href="#">Du vin s'il-vous-Plait!</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+ </div>
+
+<!-- Carrusel with branding-->
+  <div class="container">
+    <br>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+
+        <div class="item active">
+          <img src="assets/images/food3.jpeg" alt="Chania" width="500" height="345">
+          <div class="carousel-caption">
+            <h1 style="font-size: 180px">"Sous!"</h1>
+            <h3 style="font-size: 90px">for all seasons</h1>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="assets/images/food1.jpeg" alt="Stew" width="500" height="345">
+          <div class="carousel-caption">
+            <h1 style="font-size: 180px;">"Sous!"</h1>
+            <h3 style="font-size: 90px">for all seasons</h1>
+          </div>
+        </div>
+      
+        <div class="item">
+          <img src="assets/images/food2.jpeg" alt="Sweets" width="500" height="345">
+          <div class="carousel-caption">
+            <h1 style="font-size: 180px;">"Sous!"</h1>
+            <h3 style="font-size: 90px">for all seasons</h1>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="assets/images/food4.jpeg" alt="Potatoes" width="500" height="345">
+          <div class="carousel-caption">
+            <h1 style="font-size: 180px;">"Sous!"</h1>
+            <h3 style="font-size: 90px">for all seasons</h1>
+          </div>
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
+<!-- Jumbotroton with choices of 3 buttons warning!!! -to be defined -->
+  
+  <div class="jumbotron">
+    <h1 class="display-3">Hello, world!</h1>
+      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+      
+      <hr class="my-4">
+      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+      <p class="lead">
+        <a class="btn btn-warning btn-lg" href="#" role="button">Learn more</a>
+        <a class="btn btn-warning btn-lg" href="#" role="button">Learn more</a>
+        <a class="btn btn-warning btn-lg" href="#" role="button">Learn more</a>
+      </p>
+  </div>
+</header>
+
+</br>
+
+ <!--  about us section -->
+
+<header> 
+  <section class="about">
+     <h1 style="color: white; text-align: center; font-size: 90px ">About us</h1>
+   
+      <div class="row">
+        <div class="col-xsm-12 jumbotron" >
+
+          <section>
+            <img src="assets/images/teamSous.jpeg" alt="Team" width="500" height="345">
+         
+
+        <div class="col-sm-6">
+          <section>
+            
+            <h3>WE ARE TASTY</h3>
+            <p>Sous Chef is the shop for people who love cooking! We are the place-to-be online for cooks and chefs – with ingredients, equipment, tableware and gifts inspired by leading restaurants and international food.</p>
+            <p>We are based in north London with a warehouse full of fabulous things, ready for next day delivery. Sous Chef ships to thousands of customers each month, including some of the top Michelin-starred restaurants across Europe.</p>
+            <a class="btn btn-warning btn-lg" href="#" role="button">Learn more</a>
+          </section>
+        </div>
+        </div>
+      </div>     
+  </section>
+</header>
+</br>
+
+<!-- recipe of the month -->
+
+<header> 
+    <section class="recipe-featured">
+    <h1 style="color: white; text-align: center; font-size: 90px ">This Week's Recipe</h1>
+
+    <div class="row">
+          <div class="col-xsm-12 jumbotron" >
+      
+        <section>
+          <img src="https://bytebucket.org/consatanos/pen-picture/raw/3c0be7f1f1ea380d9165eb09d5c0f1ec921448f2/f-r/img/recipies-pic.jpg" alt="recipe" width="500" height="345">
+          
+          <div class="col-sm-6">
+            <h3>Taste of Precious</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard</p>
+            <p>Dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. . </p>
+             <a class="btn btn-warning btn-lg" href="#" role="button">Learn more</a>
+          </div></br>
+        </section>
+      </div>
+    </section>
+  </header>
+  </br>
+            
+
+  <!-- Paring wine section with data input-->
+  <header>
+    <section class="pairing">
+      <h1 style="color: white; text-align: center; font-size: 90px ">Du Vin S'il-vous-plait!</h1>
+      
+      <div class="row">
+          <div class="col-xsm-12 jumbotron" >
+            
+            <section>
+            <img src="https://bytebucket.org/consatanos/pen-picture/raw/3c0be7f1f1ea380d9165eb09d5c0f1ec921448f2/f-r/img/menu-drink-pic-1.jpg" alt="wine" width="500" height="345">
+              <h3>Delicious</h3>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard</p>
+                  <p>Dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesettingdard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. I</p>
+          
+                <div class="form-group"></br>
+                  <label for="exampleSelect1">Example select</label>
+                  <select class="form-control" id="exampleSelect1">
+                    <option>White wine</option>
+                    <option>Red Wine</option>
+                    <option>Aperitif</option>
+                    <option>Digestif</option>
+                    <option>Ports</option>
+                  </select>
+
+                  <label for="exampleSelect1">Example select</label>
+                  <select class="form-control" id="exampleSelect1">
+                    <option>France</option>
+                    <option>Italy</option>
+                    <option>Portugal</option>
+                    <option>Chili</option>
+                    <option>California</option>
+                  </select>
+
+                  <label for="exampleSelect1">Example select</label>
+                  <select class="form-control" id="exampleSelect1">
+                    <option>Appetisers</option>
+                    <option>Cheese</option>
+                    <option>Meal</option>
+                    <option>Desserts</option>
+                    <option>Petit Fours</option>
+                  </select>
+                  </br>
+
+                <a class="btn btn-warning btn-lg" href="#" role="button">Learn more</a>
+              </div> 
+            </section>  
+          </div> 
+       </div>  
+      </section>  
+  </header>  
+
+
+  <footer>
+    <section class="pairing">
+      <h1 style="color: white; text-align: center; font-size: 70px ">Contact us</h1>
+      
+
+        <div class="row">
+          <div class="col-xsm-12 jumbotron" >
+
+                <section>
+                  <h3>Take it easy with location</h3>
+                  <div>
+                    <p>112-Legere ancillae vix ne.
+                      <br> Te elit putent propriae eum,
+                      <br> aliquip nominati</p>
+                    <br>
+                    <p> phone: 00 000 000
+                      <br> Email: support@sous.com</p>
+                  </div>
+                  
+                  <form action="">
+                    <div>
+                      <div class="form-group">
+                        <label for="InputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter your email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                      </div>
+                      <div class="form-group">
+                        <label for="Name">Name</label>
+                        <input type="password" class="form-control" id="leInputName" placeholder="Your Name">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleTextarea">Message</label>
+                        <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                      </div>
+                    <a class="btn btn-warning btn-lg" href="#" role="submit-button">Submit</a>
+                  </form>            
+                </section>
+          </div>
+         </div> 
+     </section>
+  </footer>
+  
+</body>
+</html>
+
+
+  
+
+
+<!-- TO BE UPDATED <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script> -->
+<!-- TO BE UPDATED <script type="text/javascript" language='javascript' src="assets/js/sous.js"></script> -->
+</body>
+</html>
