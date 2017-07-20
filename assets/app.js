@@ -23,7 +23,7 @@ var pos = {lat: 0, long: 0};
                           lat: results[0].geometry.location.lat(),
                           lng: results[0].geometry.location.lng()
                         };
-                        console.log(pos);
+                        //console.log(pos);
                     }
                 });
             }
@@ -46,21 +46,4 @@ var pos = {lat: 0, long: 0};
     });
 
 //Functions
-function getLatLong(){
-    // Try HTML5 geolocation.
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-        pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-            console.log(pos);
-          }, function() {
-
-             $("#geoModal").modal();
-          });
-    } else {
-
-        $("#geoModal").modal();
-    } 
-};
+4
