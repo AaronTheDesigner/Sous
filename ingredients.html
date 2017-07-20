@@ -9,6 +9,19 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-social.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+  <!-- bootstrap cdn -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -16,26 +29,39 @@
 
     <!-- nav bar //change labels-->
 
-<nav>
+ <nav>
 
     <div class="nav-wrapper"> 
        <div class="nav-wrapper teal darken-2">
-      <a href="index.html" class="home-page center">Home Page</a>
+          <a href="index.html" class="home-page center">Home Page</a>
+        </div>
+      </div>  
   </nav>
 
-
-
-   <h1 class="header center " style="color: #8d6e63; font-size:60px ";>"Ingredients"</h1> 
-   <form>
-
+  
+  <div class="container">
+   <div class="row">
+    <div class="col s12 m7">
+        <h1 class="header center" style="color: #8d6e63; font-size:60px ";>"Ingredients"</h1> 
+    </div>
+   </div> 
+  </div> 
     <!-- ALERT!!! container for ingredients -->
-    
+   <br>
+   <br>
+   <br>
+   <br>
 <div class="container">
-
-    
-     <form action="#" id="view">  
-     <a href="" id="download-button" class="waves-effect waves-light btn teal darken-2">Search</a>
-    
+  <div class="class row">
+     <div class="col s12 m12">
+         <form action="#" id="view"> 
+         <div class="input-field col s3">
+          <input  id="ingredient" type="text" class="validate">
+          <label class="active" for="ingredient"><h2>Add ingredient</h2></label>
+        </div>
+          <a href="" id="download-button" class="waves-effect waves-light btn teal darken-2">add</a>
+    </div>
+  </div>
 </div>
    
  <!-- ALERT!!!placeholders for recipes - card format with link -->
@@ -56,6 +82,7 @@
               I am convenient because I require little markup to use effectively.</p>
             </div>
             <div class="card-action">
+            <!-- option for full recipe -->
               <a href="#">This is a link</a>
             </div>
           </div>
