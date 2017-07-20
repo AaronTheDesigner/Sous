@@ -1,319 +1,215 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SOUS</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Sous for all seasons</title>
 
-  <!--Css files -->
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/Reset.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css"> 
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-social.css"> 
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-social.css">
 
-  <!-- links for bootstrap -->
+
+  <!-- bootstrap cdn -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
- <!-- <! links for  jquery CDN--> 
- <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
- 
- <!-- add moment JS file -->
- <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<style>
-  .carousel-inner > .item > img,
-  .carousel-inner > .item > a > img {
-      width: 90%;
-      margin: auto;
-  }
-  </style>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 </head>
 
-<body style="background-color:#000000;">
-  
-<header>
 
-<!-- navigation bar -->
- 
-  <div class="container-fluid">
-  <nav class="navbar navbar-default">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Sous</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Sous-Home Page</a>
+<body>
+  <nav>
+
+    <nav>
+
+    <div class="nav-wrapper"> 
+       <div class="nav-wrapper teal darken-2">
+      <a href="index.html" class="home-page center">Home Page</a>
+  </nav>
+      
+<div class="container"  style="background-color: #e0e0e0 ">
+
+  <!-- LOGO AND SIGN IN USING SOCIAL MEDIA - included social buttons-->
+
+  <div class="section no-pad-bot" id="index-banner">
+    
+    <div class="container">
+      <h1 class="header center" style="color: #8d6e63; font-size:100px ";>"Sous"</h1>
+          <div class="row center">
+            <h2 class="header col s12 light" style="color:#8d6e63">for all seasons</h2>
+          </div>
+          <div class="col l12 s12">
+            <h3 class="brown-text center-align" ;">Sign in with</h3>
+              <ul>
+              <a class="waves-effect waves-light btn-floating btn-large social facebook">
+                  <i class="fa fa-facebook"></i> Sign in with facebook</a>
+              <a class="waves-effect waves-light btn-floating btn-large social instagram">
+                  <i class="fa fa-instagram"></i> Sign in with instagram</a>
+              <a class="waves-effect waves-light btn-floating btn-large social windows ">
+                  <i class="fa fa-windows "></i> Sign in with windows </a>
+              <a class="waves-effect waves-light btn-floating btn-large social pinterest">
+                  <i class="fa fa-pinterest"></i> Sign in with pinterest</a>
+              <a class="waves-effect waves-light btn-floating btn-large social twitter">
+                <i class="fa fa-twitter"></i> Sign in with twitter</a>
+         </ul>  
     </div>
+  </div>
+ </div><br>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">About<span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Conatct us</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Sous<span class="caret"></span></a>
+<!-- SLIDER -->
 
-          <!-- NOTE!!! labels to define -->
-          <ul class="dropdown-menu">
-            <li><a href="#">Register</a></li>
-            <li><a href="#">Inspire me!</a></li>
-            <li><a href="#">Seasonal</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Ingredients</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Cuisines</a></li>
-            <li><a href="#">Du vin s'il-vous-Plait!</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
- </div>
+<div class="container">
 
-<!-- Carrusel with branding-->
+ <div class="slider">
+
+    <ul class="slides">
+      <li>
+        <img src="https://lorempixel.com/580/250/food/1"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="https://lorempixel.com/580/250/food/2"> <!-- random image -->
+        <div class="caption left-align">
+          <h3>Left Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="https://lorempixel.com/580/250/food/3"> <!-- random image -->
+        <div class="caption right-align">
+          <h3>Right Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="https://lorempixel.com/580/250/food/4"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+    </ul>
+  </div>    
+</div>
+<!--  -->
   <div class="container">
-    <br>
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
-      </ol>
+    <div class="section">
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="center icon-block">
+            <h2 class="center brown-text"><i class="material-icons">picture_in_picture</i></h2>
+            <h5 class="center brown-text">Explore recipes </h5>
 
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
+            <p class="center brown-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+          </div>
+          <a href="" id="download-button" class="waves-effect waves-light btn teal darken-2">Search</a>
+        </div>
 
-        <div class="item active">
-          <img src="assets/images/food3.jpeg" alt="Chania" width="500" height="345">
-          <div class="carousel-caption">
-            <h1 style="font-size: 180px">"Sous!"</h1>
-            <h3 style="font-size: 90px">for all seasons</h1>
+        <div class="col s12 m4">
+          <div class="center icon-block">
+            <h2 class="center brown-text"><i class="material-icons">person_pin</i></h2>
+            <h5 class="center brown-text">Eating out</h5>
+
+            <p class="center brown-text">By utilizing elements and principles o.</p>
+            <a href="" id="download-button" class="waves-effect waves-light btn teal darken-2">Search</a>
           </div>
         </div>
 
-        <div class="item">
-          <img src="assets/images/food1.jpeg" alt="Stew" width="500" height="345">
-          <div class="carousel-caption">
-            <h1 style="font-size: 180px;">"Sous!"</h1>
-            <h3 style="font-size: 90px">for all seasons</h1>
-          </div>
-        </div>
-      
-        <div class="item">
-          <img src="assets/images/food2.jpeg" alt="Sweets" width="500" height="345">
-          <div class="carousel-caption">
-            <h1 style="font-size: 180px;">"Sous!"</h1>
-            <h3 style="font-size: 90px">for all seasons</h1>
-          </div>
-        </div>
+        <div class="col s12 m4">
+          <div class="center icon-block">
+            <h2 class="center brown-text"><i class="material-icons">loyalty</i></h2>
+            <h5 class="center brown-text">Inspire me</h5>
+             <br>
 
-        <div class="item">
-          <img src="assets/images/food4.jpeg" alt="Potatoes" width="500" height="345">
-          <div class="carousel-caption">
-            <h1 style="font-size: 180px;">"Sous!"</h1>
-            <h3 style="font-size: 90px">for all seasons</h1>
+            <p class="center brown-text">We have provided detailed documentation as well as specific code examples to help new users get started.</p>
+            <a href="" id="download-button" class="waves-effect waves-light btn teal darken-2">Search</a>
           </div>
         </div>
       </div>
 
-      <!-- Left and right controls -->
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
     </div>
+    <br><br>
   </div>
 
-<!-- Jumbotroton with choices of 3 buttons warning!!! -to be defined -->
+  <footer class="page-footer teal darken-2">
   
-  <div class="jumbotron">
-    <h1 class="display-3">Hello, world!</h1>
-      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-      
-      <hr class="my-4">
-      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-      <p class="lead">
-        <a class="btn btn-warning btn-lg" href="#" role="button">Learn more</a>
-        <a class="btn btn-warning btn-lg" href="#" role="button">Learn more</a>
-        <a class="btn btn-warning btn-lg" href="#" role="button">Learn more</a>
-      </p>
-  </div>
-</header>
-
-</br>
-
- <!--  about us section -->
-
-<header> 
-  <section class="about">
-     <h1 style="color: white; text-align: center; font-size: 90px ">About us</h1>
-   
       <div class="row">
-        <div class="col-xsm-12 jumbotron" >
-
-          <section>
-            <img src="assets/images/teamSous.jpeg" alt="Team" width="500" height="345">
-         
-
-        <div class="col-sm-6">
-          <section>
-            
-            <h3>WE ARE TASTY</h3>
-            <p>Sous Chef is the shop for people who love cooking! We are the place-to-be online for cooks and chefs – with ingredients, equipment, tableware and gifts inspired by leading restaurants and international food.</p>
-            <p>We are based in north London with a warehouse full of fabulous things, ready for next day delivery. Sous Chef ships to thousands of customers each month, including some of the top Michelin-starred restaurants across Europe.</p>
-            <a class="btn btn-warning btn-lg" href="#" role="button">Learn more</a>
-          </section>
+        <div class="col l12 s12">
+          <h3 class="white-text center">Company Bio</h3>
+          <h5 class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</h5>
         </div>
-        </div>
-      </div>     
-  </section>
-</header>
-</br>
-
-<!-- recipe of the month -->
-
-<header> 
-    <section class="recipe-featured">
-    <h1 style="color: white; text-align: center; font-size: 90px ">This Week's Recipe</h1>
-
-    <div class="row">
-          <div class="col-xsm-12 jumbotron" >
-      
-        <section>
-          <img src="https://bytebucket.org/consatanos/pen-picture/raw/3c0be7f1f1ea380d9165eb09d5c0f1ec921448f2/f-r/img/recipies-pic.jpg" alt="recipe" width="500" height="345">
-          
-          <div class="col-sm-6">
-            <h3>Taste of Precious</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard</p>
-            <p>Dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. . </p>
-             <a class="btn btn-warning btn-lg" href="#" role="button">Learn more</a>
-          </div></br>
-        </section>
       </div>
-    </section>
-  </header>
-  </br>
-            
-
-  <!-- Paring wine section with data input-->
-  <header>
-    <section class="pairing">
-      <h1 style="color: white; text-align: center; font-size: 90px ">Du Vin S'il-vous-plait!</h1>
-      
-      <div class="row">
-          <div class="col-xsm-12 jumbotron" >
-            
-            <section>
-            <img src="https://bytebucket.org/consatanos/pen-picture/raw/3c0be7f1f1ea380d9165eb09d5c0f1ec921448f2/f-r/img/menu-drink-pic-1.jpg" alt="wine" width="500" height="345">
-              <h3>Delicious</h3>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard</p>
-                  <p>Dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesettingdard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. I</p>
-          
-                <div class="form-group"></br>
-                  <label for="exampleSelect1">Example select</label>
-                  <select class="form-control" id="exampleSelect1">
-                    <option>White wine</option>
-                    <option>Red Wine</option>
-                    <option>Aperitif</option>
-                    <option>Digestif</option>
-                    <option>Ports</option>
-                  </select>
-
-                  <label for="exampleSelect1">Example select</label>
-                  <select class="form-control" id="exampleSelect1">
-                    <option>France</option>
-                    <option>Italy</option>
-                    <option>Portugal</option>
-                    <option>Chili</option>
-                    <option>California</option>
-                  </select>
-
-                  <label for="exampleSelect1">Example select</label>
-                  <select class="form-control" id="exampleSelect1">
-                    <option>Appetisers</option>
-                    <option>Cheese</option>
-                    <option>Meal</option>
-                    <option>Desserts</option>
-                    <option>Petit Fours</option>
-                  </select>
-                  </br>
-
-                <a class="btn btn-warning btn-lg" href="#" role="button">Learn more</a>
-              </div> 
-            </section>  
-          </div> 
-       </div>  
-      </section>  
-  </header>  
-
-
-  <footer>
-    <section class="pairing">
-      <h1 style="color: white; text-align: center; font-size: 70px ">Contact us</h1>
-      
-
-        <div class="row">
-          <div class="col-xsm-12 jumbotron" >
-
-                <section>
-                  <h3>Take it easy with location</h3>
-                  <div>
-                    <p>112-Legere ancillae vix ne.
-                      <br> Te elit putent propriae eum,
-                      <br> aliquip nominati</p>
-                    <br>
-                    <p> phone: 00 000 000
-                      <br> Email: support@sous.com</p>
-                  </div>
-                  
-                  <form action="">
-                    <div>
-                      <div class="form-group">
-                        <label for="InputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter your email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                      </div>
-                      <div class="form-group">
-                        <label for="Name">Name</label>
-                        <input type="password" class="form-control" id="leInputName" placeholder="Your Name">
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleTextarea">Message</label>
-                        <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-                      </div>
-                    <a class="btn btn-warning btn-lg" href="#" role="submit-button">Submit</a>
-                  </form>            
-                </section>
+      <div class="footer-copyright">
+            <div class="container">
+            © 2017 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
           </div>
-         </div> 
-     </section>
-  </footer>
-  
-</body>
-</html>
+        </footer>
+ 
 
 
-  
+  <!--  Scripts-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+   
+   <!-- script for slider -->
+   <script>
+   $(document).ready(function(){
+      $('.slider').slider();
+    });
+    $('.carousel.carousel-slider').carousel({fullWidth: true});
+   </script>           
+   
+   <!-- This is for the modal to ask for address and/or zip code if needed -->
+    <div id="geoModal" class="modal fade" role="dialog">
+     
+     <!-- Modal content -->
+     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSEmpXx2P7y9ExUaFVqftp97VegKb30J0"></script>
+     
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header" style="padding:35px 50px;">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <h4><span class="glyphicon glyphicon-home"></span> Input Location</h4>
+           <h4 id="modalText">SOUS has to know your general area to tailor the search results to you.</h4>
+         </div>
+         <div class="modal-body" style="padding:40px 50px;">
+           <form role="form">
+             <div class="form-group">
+               <label for="address"><span class="glyphicon glyphicon-street"></span>Street Adress</label>
+               <input type="text" class="form-control" id="address" placeholder="Street Address">
+             </div>
+             <div class="form-group">
+               <label for="city"><span ></span>City</label>
+               <input type="text" class="form-control" id="city" placeholder="City">
+             </div>
+             <div class="form-group">
+               <label for="state"><span ></span>State</label>
+               <input type="text" class="form-control" id="state" placeholder="State abbreviation">
+             </div>
+             <div class="form-group has-success">
+               <label for="zip"><span ></span>Zip Code</label>
+               <input type="text" class="form-control" id="zip" placeholder="<Required> U.S. Zip Code" required>
+             </div>
+             <button type="submit" id="submitAddressBtn" class="btn btn-success btn-block" data-dismiss="modal"><span class="glyphicon gyphicon-map-marker"></span>Enter</button>
+           </form>
+         </div>
 
-
-<!-- TO BE UPDATED <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script> -->
-<!-- TO BE UPDATED <script type="text/javascript" language='javascript' src="assets/js/sous.js"></script> -->
-</body>
+       </div>
+     </div>
+   </div>
+  </body>
 </html>
