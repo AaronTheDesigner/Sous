@@ -6,7 +6,8 @@
  * Made By MaterializeCSS.com
  */
 
- 
+ nav { 
+ font-size: 20px; }
 
 .icon-block {
   padding: 0 15px;
