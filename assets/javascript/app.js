@@ -165,7 +165,8 @@ function getWeather(){
         "_app_id": appID,
         "_app_key": appKey,
         "q": "",
-        "allowedIngredient":ingred
+        "allowedIngredient":ingred,
+        "source": ""
       },
       method: "Get"
     }).done(function(response) {
@@ -175,7 +176,7 @@ function getWeather(){
   
   function callback(response){
     console.log("Callback", response);
-    console.log("Callback", response.matches[0].ingredients);
+    console.log("Callback", response.matches[0].source);
 
     var showDiv = $("<div class='show'>");
     //emplty #show of previous results
@@ -183,21 +184,22 @@ function getWeather(){
     $("#matchList").empty();
     //Store Recipename
     var recipeName = response.matches[0].recipeName;
+    $("#matchTitle").text(recipeName);
     //element to have Name displayed
-    var pOne = $("<p>").text(recipeName);
+    //var pOne = $("<p>").text(recipeName);
     //display Recipename
-    showDiv.append(pOne);
+    //showDiv.append(pOne);
     //image url
     var imageURL = response.matches[0].imageUrlsBySize[90];
     //element to hold image
-    var image = $("<img>").attr("src", imageURL);
+    //var image = $("<img>").attr("src", imageURL);
     ///display image
-    showDiv.append(image);
+    $("#img").attr('src', imageURL);
     //result ingredient list
     var ingList = response.matches[0].ingredients;
     //display ingLis
   //Displaying the recipe
-    $("#show").prepend(showDiv);
+    $("#matchList").prepend(showDiv);
 
     
     //for loop
@@ -207,7 +209,7 @@ function getWeather(){
       //store 
       var matchList = ingList[i];
       //element to have list displayed
-      var element = $("<li class='list-group-item'>").text(matchList);
+      var element = $("<li class='list-group-item text-center'>").text(matchList);
       //display list
       matchDiv.append(element);
       //prepend list to match list
@@ -241,7 +243,7 @@ function getWeather(){
           //store
           var listGo = pushList[j];
           //element to have list displayed
-          var listElement = $("<li class='list-group-item'>").text(listGo);
+          var listElement = $("<li class='list-group-item text-center'>").text(listGo);
           //append to ing
           $("#ing").append(listElement);
           $("#matchList").empty();
@@ -275,12 +277,14 @@ function getWeather(){
     $("#input").val("");
 
     getresults(ingredients, callback);
-    $("#ing").append("<li class='list-group-item'>" + newItem.item + "</li>");
+    $("#ing").append("<li class='list-group-item text-center'>" + newItem.item + "</li>");
+    $("#card").removeClass('hide');
 
     console.log(newItem.item); 
-
-
-
-    
 });
-  //button for adding ingredients
+  //reset button
+  $("#reset").on("click", function(event){
+    event.preventDefault();
+    $("#card").addClass('hide');
+    $("#ing").empty();
+  });
