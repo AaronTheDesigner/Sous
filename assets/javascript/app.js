@@ -134,3 +134,153 @@ function getWeather(){
         }       
     
 }
+
+// Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDtVG5YDE6ULEymmmVSew-JH_53LEaBox8",
+    authDomain: "allyourbase-5e700.firebaseapp.com",
+    databaseURL: "https://allyourbase-5e700.firebaseio.com",
+    projectId: "allyourbase-5e700",
+    storageBucket: "allyourbase-5e700.appspot.com",
+    messagingSenderId: "777682871332"
+  };
+  
+  firebase.initializeApp(config);
+
+  var database = firebase.database();
+
+  //Yummly Variables
+  var appID = "5129dd16";
+
+  var appKey = "9772f1db10ba433223ad4e765dc2b537";
+  var ingredients = [];
+
+  //var queryURL
+  var queryURL = "http://api.yummly.com/v1/api/recipes";
+  //ajax
+ var getresults = function(ingred, callback){
+  $.ajax({
+      url: queryURL,
+      data: {
+        "_app_id": appID,
+        "_app_key": appKey,
+        "q": "",
+        "allowedIngredient":ingred
+      },
+      method: "Get"
+    }).done(function(response) {
+      callback(response);
+   })
+ };
+  
+  function callback(response){
+    console.log("Callback", response);
+    console.log("Callback", response.matches[0].ingredients);
+
+    var showDiv = $("<div class='show'>");
+    //emplty #show of previous results
+    $("#show").empty();
+    $("#matchList").empty();
+    //Store Recipename
+    var recipeName = response.matches[0].recipeName;
+    //element to have Name displayed
+    var pOne = $("<p>").text(recipeName);
+    //display Recipename
+    showDiv.append(pOne);
+    //image url
+    var imageURL = response.matches[0].imageUrlsBySize[90];
+    //element to hold image
+    var image = $("<img>").attr("src", imageURL);
+    ///display image
+    showDiv.append(image);
+    //result ingredient list
+    var ingList = response.matches[0].ingredients;
+    //display ingLis
+  //Displaying the recipe
+    $("#show").prepend(showDiv);
+
+    
+    //for loop
+    for (var i = 0; i < ingList.length; i++) {
+      
+      var matchDiv = $("<div>");
+      //store 
+      var matchList = ingList[i];
+      //element to have list displayed
+      var element = $("<li class='list-group-item'>").text(matchList);
+      //display list
+      matchDiv.append(element);
+      //prepend list to match list
+      $("#matchList").prepend(matchDiv);
+
+      //storage
+      var matchItem = {
+        matchItems: matchList
+      };
+      //database upload
+      database.ref().push(matchItem);
+      //log
+      console.log(matchItem.matchItems);
+
+  
+    };
+
+  //onclick event for add list
+      $("#add").on("click",function(event){
+        event.preventDefault();
+        //empty ing
+        $("#ing").empty();
+
+      
+        //sigh another for loop
+        var pushList = response.matches[0].ingredients;
+        for (var j = 0; j < pushList.length; j++) {
+          console.log(pushList[j]);
+          //div
+          var listDiv = $("<div>");
+          //store
+          var listGo = pushList[j];
+          //element to have list displayed
+          var listElement = $("<li class='list-group-item'>").text(listGo);
+          //append to ing
+          $("#ing").append(listElement);
+          $("#matchList").empty();
+        };
+        //replace with chosen recipe
+        
+      });
+
+    
+
+
+  };
+    $("#submit").on("click", function(event){
+    event.preventDefault();
+
+    //button for adding ingredients
+    var itemName = $("#input").val().trim();
+
+    //Storage
+  var newItem = {
+      item: itemName
+    };
+
+    //database upload
+    database.ref().push(newItem);
+
+    //log to console
+    var sub = newItem.item;
+    ingredients.push(itemName);
+    //clear search
+    $("#input").val("");
+
+    getresults(ingredients, callback);
+    $("#ing").append("<li class='list-group-item'>" + newItem.item + "</li>");
+
+    console.log(newItem.item); 
+
+
+
+    
+});
+  //button for adding ingredients
