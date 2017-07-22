@@ -6,6 +6,11 @@
  * Made By MaterializeCSS.com
  */
 
+ #input {
+   font-size: 30px;
+   text-align: center;
+ }
+
  nav { 
  font-size: 20px; }
 
