@@ -2,10 +2,38 @@
 var pos = {lat: 0, long: 0};
 var bHavePos = false;
 var weather = {temp: 0, rain: false, snow: false, humidity: 0, desc: ""};
+var season = "summer";
 
 
 //Click handlers
-//window.onload = function () {
+window.onload = function () {
+  getLatLong();
+
+  getSeason();
+
+}
+
+function getSeason() {
+  var currentTime = moment();
+  var month = moment().month();
+  var date = moment().date();
+
+  //month is a 0 based index
+  //March - May = spring
+  //June - August  =  summer
+  //September - November  =  autumn
+  //December - February  =  winter.
+  if(month >= 2 && month <= 4)
+    season = "spring";
+  else if(month >= 5 && month <= 7)
+    season = "summer";
+  else if(month >= 8 && month <= 10)
+    season = "autumn";
+  else if( month == 12 || month == 0 || month == 1)
+    season = "winter";
+
+}
+
 function getLatLong(){
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
@@ -51,6 +79,7 @@ $(document).on("click", "#submitAddressBtn", function(event){
                       lat: results[0].geometry.location.lat(),
                       lng: results[0].geometry.location.lng()
                     };
+                    bHavePos = true;
                     //console.log(pos);
                 }
             });
@@ -75,25 +104,6 @@ $(document).on("click", "#submitAddressBtn", function(event){
 });
 
 //Functions
-function getLatLong(){
-    // Try HTML5 geolocation.
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-        pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-            console.log(pos);
-          }, function() {
-
-             $("#geoModal").modal();
-          });
-    } else {
-
-        $("#geoModal").modal();
-    } 
-}
-
 function getWeather(){
 
     if(bHavePos){
@@ -164,19 +174,36 @@ function getWeather(){
       data: {
         "_app_id": appID,
         "_app_key": appKey,
-        "q": "",
+        "q": season,
         "allowedIngredient":ingred,
         "source": ""
       },
       method: "Get"
-    }).done(function(response) {
-      callback(response);
-   })
- };
+    }).then(function(response) {
+      queryURL = "http://api.yummly.com/v1/api/recipe/"+response.matches[0].id;
+      console.log("Logging: "+response.matches[0].id);
+      $.ajax({
+      url: queryURL,
+      data: {
+       "_app_id": appID,
+        "_app_key": appKey
+
+      },
+      method: "Get"
+    }).done(function(recipe) {
+        console.log("test", response);
+        console.log("test", recipe);
+      callback(response, recipe);
+       })
+    })
+}
+
+
   
-  function callback(response){
+  function callback(response, recipe){
     console.log("Callback", response);
     console.log("Callback", response.matches[0].source);
+    console.log("Callback Recipe: ",recipe);
 
     var showDiv = $("<div class='show'>");
     //emplty #show of previous results
@@ -190,7 +217,7 @@ function getWeather(){
     //display Recipename
     //showDiv.append(pOne);
     //image url
-    var imageURL = response.matches[0].imageUrlsBySize[90];
+    var imageURL = recipe.images[0].hostedMediumUrl;
     //element to hold image
     //var image = $("<img>").attr("src", imageURL);
     ///display image
@@ -258,6 +285,17 @@ function getWeather(){
   };
     $("#submit").on("click", function(event){
     event.preventDefault();
+
+   if(!bHavePos){
+
+      //Don't want to check more than about 20 times
+      var counter = 0;
+      if(counter < 20 && !bHavePos){
+          counter++;
+          //setTimeout(getLatLong, 250);          
+      }
+
+    }
 
     //button for adding ingredients
     var itemName = $("#input").val().trim();
