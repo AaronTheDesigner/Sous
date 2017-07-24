@@ -180,10 +180,10 @@ function getWeather(){
       },
       method: "Get"
     }).then(function(response) {
-      var queryURL2 = "http://api.yummly.com/v1/api/recipe/"+response.matches[0].id;
+      queryURL = "http://api.yummly.com/v1/api/recipe/"+response.matches[0].id;
       console.log("Logging: "+response.matches[0].id);
       $.ajax({
-      url: queryURL2,
+      url: queryURL,
       data: {
        "_app_id": appID,
         "_app_key": appKey
