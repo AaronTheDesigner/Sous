@@ -119,15 +119,13 @@ function getWeather(){
                   url: queryURL,
                   method: "GET"
                 }).done(function(response) {
-                  console.log(response);
-                  console.log(response.list[0].weather[0]);
+                  
 
                weather.temp = response.list[0].main.temp;
                weather.rain = response.list[0].rain;
                weather.snow = response.list[0].snow;
                weather.humidity = response.list[0].main.humidity;
-               weather.desc = response.list[0].weather[0].main;
-               console.log(weather);            
+               weather.desc = response.list[0].weather[0].main;            
                 });
             }
                 
@@ -169,19 +167,54 @@ function getWeather(){
   var queryURL = "http://api.yummly.com/v1/api/recipes";
   //ajax
  var getresults = function(ingred, callback){
+
+  //conditionals for weather conditions
+  if (weather.temp > 70.00) {
+    
+    //modify ajax
+    $.ajax({
+      url: queryURL,
+      data: {
+        "_app_id": appID,
+        "_app_key": appKey,
+        "excludedTechnique": "technique^technique-baking"
+      },
+      method: "Get"
+    }).done(function(callback){
+
+    })
+  };
+
+  if (weather.desc == "Clouds" || "Rain" || "Thunderstorm") {
+
+    //modify ajax
+    $.ajax({
+      url: queryURL,
+      data: {
+        "_app_id": appID,
+        "_app_key": appKey,
+        "excludedTechnique": "technique^technique-baking"
+      },
+      method: "Get"
+    }).done(function(callback){
+
+    })
+  };
+
+  //first ajax call
   $.ajax({
       url: queryURL,
       data: {
         "_app_id": appID,
         "_app_key": appKey,
-        "q": "",
+        "q": season,
         "allowedIngredient":ingred,
         "source": ""
       },
       method: "Get"
     }).then(function(response) {
       var queryURL2 = "http://api.yummly.com/v1/api/recipe/"+response.matches[0].id;
-      console.log("Logging: "+response.matches[0].id);
+      
       $.ajax({
       url: queryURL2,
       data: {
@@ -191,9 +224,9 @@ function getWeather(){
       },
       method: "Get"
     }).done(function(recipe) {
-        console.log("test", response);
-        console.log("test", recipe);
+        
       callback(response, recipe);
+
        })
     })
 }
@@ -201,9 +234,8 @@ function getWeather(){
 
   
   function callback(response, recipe){
-    console.log("Callback", response);
-    console.log("Callback", response.matches[0].source);
-    console.log("Callback Recipe: ",recipe);
+    
+    $("#link").attr('href', recipe.source.sourceRecipeUrl);
 
     var showDiv = $("<div class='show'>");
     //emplty #show of previous results
@@ -249,7 +281,7 @@ function getWeather(){
       //database upload
       database.ref().push(matchItem);
       //log
-      console.log(matchItem.matchItems);
+      
 
   
     };
@@ -317,8 +349,9 @@ function getWeather(){
     getresults(ingredients, callback);
     $("#ing").append("<li class='list-group-item text-center'>" + newItem.item + "</li>");
     $("#card").removeClass('hide');
+    
 
-    console.log(newItem.item); 
+     
 });
   //reset button
   $("#reset").on("click", function(event){
